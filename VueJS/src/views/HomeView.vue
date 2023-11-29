@@ -3,22 +3,30 @@
   import ButtonCounter from '@/components/ButtonCounter.vue';
   import BlogPost from '@/components/BlogPost.vue';
 
-  const count: Ref<number> = ref(0);
-
-  const increment = () => {
-    return count.value++;
+  interface Posts {
+    title: string,
+    content?: string
   }
+
+  const fontSize: Ref<number> = ref(10);
+  const posts: Ref<Posts[]> = ref([
+    {title: "kucing liar", content: "kucing liar nakal"},
+    {title: "Nasi goreng nice cooker"}
+  ])
 </script>
 
 <template>
   <div>
     <p>This is child component below</p>
     <ButtonCounter />
-    <ButtonCounter />
   </div>
-  <div>
     Blog Post
-    <BlogPost title="Kucing liar" content="kucing liar" />
-    <BlogPost title="nasi goreng rice cooker" />
+  <div :style="{ fontSize: fontSize + 'px' }">
+    <BlogPost 
+    v-for="post in posts"
+    @text-enlarge="fontSize++"
+    :title="post.title"
+    :content="post.content"
+    />
   </div>
 </template>

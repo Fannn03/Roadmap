@@ -10,7 +10,7 @@
 
 <template>
   <div>
-    <p>Count : {{ count }}</p>
+    <p class="text-red-500">Count : {{ count }}</p>
     <button type="button" @click="increment">Count me</button>
   </div>
 </template>

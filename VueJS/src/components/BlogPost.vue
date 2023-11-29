@@ -36,11 +36,15 @@
     content: () => ['lorem', 'ipsum']
   })
 
+  const emit = defineEmits<{
+    (e: 'text-enlarge'): void
+  }>()
 </script>
 
 <template>
   <div>
     <p>Blog title : {{ title }}</p>
     <p>Content : {{ content }}</p>
+    <button @click="emit('text-enlarge')" >Enlarge Text</button>
   </div>
 </template>
