@@ -28,7 +28,8 @@
   interface Props {
     title?: string,
     content?: string | string[],
-    author?: Author
+    author?: Author,
+    likes: number
   }
 
   withDefaults(defineProps<Props>(), {
@@ -45,6 +46,7 @@
   <div class="border bg-blue-500 rounded-lg p-4">
     <p>Blog title : {{ title }}</p>
     <p>Content : {{ content }}</p>
+    <p>Likes : {{ likes }}</p>
     <button @click="emit('text-enlarge')" >Enlarge Text</button>
   </div>
 </template>

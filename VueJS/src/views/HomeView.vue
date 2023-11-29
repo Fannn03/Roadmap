@@ -5,13 +5,14 @@
 
   interface Posts {
     title: string,
-    content?: string
+    content?: string,
+    likes: number
   }
 
   const fontSize: Ref<number> = ref(20);
   const posts: Ref<Posts[]> = ref([
-    {title: "kucing liar", content: "kucing liar nakal"},
-    {title: "Nasi goreng nice cooker"}
+    {title: "kucing liar", content: "kucing liar nakal", likes: 32},
+    {title: "Nasi goreng nice cooker", likes: 250}
   ])
 </script>
 
@@ -27,6 +28,7 @@
     @text-enlarge="fontSize++"
     :title="post.title"
     :content="post.content"
+    :likes="post.likes"
     />
   </div>
 </template>
