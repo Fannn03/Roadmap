@@ -1,0 +1,46 @@
+<script setup lang="ts">
+  // There is many option to declare component props : https://vuejs.org/guide/typescript/composition-api.html#typing-component-props
+
+  // const props = defineProps({
+  //   title: {
+  //     type: String,
+  //     required: true
+  //   }
+  // })
+
+  // defineProps<{
+  //   title: string
+  // }>();
+
+  // interface Props {
+  //   title: string
+  // };
+
+  // defineProps<Props>();
+
+  // with default value
+
+  interface Author {
+    name: string,
+    gender: string
+  }
+
+  interface Props {
+    title?: string,
+    content?: string | string[],
+    author?: Author
+  }
+
+  withDefaults(defineProps<Props>(), {
+    title: "Default title",
+    content: () => ['lorem', 'ipsum']
+  })
+
+</script>
+
+<template>
+  <div>
+    <p>Blog title : {{ title }}</p>
+    <p>Content : {{ content }}</p>
+  </div>
+</template>
