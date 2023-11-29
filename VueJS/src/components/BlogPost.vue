@@ -42,7 +42,7 @@
 </script>
 
 <template>
-  <div>
+  <div class="border bg-blue-500 rounded-lg p-4">
     <p>Blog title : {{ title }}</p>
     <p>Content : {{ content }}</p>
     <button @click="emit('text-enlarge')" >Enlarge Text</button>

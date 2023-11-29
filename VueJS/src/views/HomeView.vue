@@ -8,7 +8,7 @@
     content?: string
   }
 
-  const fontSize: Ref<number> = ref(10);
+  const fontSize: Ref<number> = ref(20);
   const posts: Ref<Posts[]> = ref([
     {title: "kucing liar", content: "kucing liar nakal"},
     {title: "Nasi goreng nice cooker"}
@@ -21,7 +21,7 @@
     <ButtonCounter />
   </div>
     Blog Post
-  <div :style="{ fontSize: fontSize + 'px' }">
+  <div :style="{ fontSize: fontSize + 'px' }" class="flex gap-4">
     <BlogPost 
     v-for="post in posts"
     @text-enlarge="fontSize++"
