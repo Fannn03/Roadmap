@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <div class="bg-white p-3 border-b">
+  <div class="bg-white p-4 border-b">
     Navbar
   </div>
 </template>

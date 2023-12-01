@@ -7,7 +7,7 @@
 </script>
 
 <template>
-  <div class="p-4 rounded-lg bg-blue-500 ">
+  <div class="p-4 rounded-lg bg-blue-500 text-white">
     <h1 class="text-xl">{{ title }}</h1>
   </div>
 </template>
